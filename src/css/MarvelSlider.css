@@ -1,0 +1,13 @@
+.swiper {
+  height: 400px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+}
+
+.slider {
+  background-color: gray;
+  border-radius: 20px;
+  height: 400px;
+  min-width: 200px;
+}

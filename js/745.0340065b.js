@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmarvel_exem"]=self["webpackChunkmarvel_exem"]||[]).push([[745],{3745:function(e,r,a){a.r(r),a.d(r,{default:function(){return s}});var n=a(6252);function t(e,r,a,t,u,c){return(0,n.wg)(),(0,n.iD)("h1",null,"MarvelCharacters")}var u={name:"MarvelCharacters"},c=a(3744);const l=(0,c.Z)(u,[["render",t]]);var s=l}}]);
+//# sourceMappingURL=745.0340065b.js.map

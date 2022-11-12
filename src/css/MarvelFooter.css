@@ -1,0 +1,8 @@
+.footer {
+  z-index: 10;
+  margin-top: 100px;
+  height: 200px;
+  width: 100%;
+  background-image: url(../../../public/src/img/Marvel-Red-Background.webp);
+  background-size: cover;
+}

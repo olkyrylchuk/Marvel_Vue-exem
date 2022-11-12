@@ -1,0 +1,115 @@
+.comics__all {
+  padding-top: 20px;
+  position: relative;
+  height: 100%;
+  min-width: 100%;
+  background-size: contain;
+  background-color: #fff;
+}
+
+.comics__all-title {
+  color: red;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.comics__all .btn__wrap {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.comics__all .btn__wrap .btn {
+  font-family: "Staatliches", cursive;
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 1.5px;
+  padding: 5px;
+  background-color: red;
+  color: #fff;
+}
+
+.comics__all-results {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 2rem;
+}
+
+.comics__all-results-item {
+  padding: 10px;
+  background-color: gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comics__all-results-item:hover {
+  scale: 0.95;
+  transition: ease-in-out 0.3s;
+  opacity: 0.4;
+  background-color: #000;
+  color: #fff;
+}
+
+.comics__all-results-item .title__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.comics__all-results-item .title__wrapper h1 {
+  color: #000;
+}
+
+.comics__all-results-item .title__wrapper h2 {
+  color: #000;
+}
+
+.comics__all-results-item .title__wrapper h2 b {
+  color: red;
+}
+
+.comics__all-results-item .title__wrapper h3 {
+  color: #000;
+}
+
+.pagination-container {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.paginate-buttons {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(217, 217, 217);
+  color: black;
+}
+
+.paginate-buttons:hover {
+  background-color: #d8d8d8;
+}
+
+.active-page {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: white;
+}
+
+.active-page:hover {
+  background-color: #2988c8;
+}
+
+.paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 45px;
+}
