@@ -1,0 +1,97 @@
+.comics {
+    padding-top: 100px;
+    position: relative;
+    height: 100vh;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    &__navigation {
+        z-index: 5;
+        overflow: hidden;
+        position: static;
+        top: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+
+        ul {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+            li {
+                padding: 2px 4px;
+                background-color: red;
+
+                a {
+                    color: #fff;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .container {
+        z-index: 5;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../../public/src/img/marvel_homepage_bg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-top: 25px;
+
+        .btn__wrap {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            .btn {
+                font-family: "Staatliches", cursive;
+                text-transform: uppercase;
+                font-size: 25px;
+                letter-spacing: 1.5px;
+                padding: 5px;
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        .results {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                height: 300px;
+                width: 200px;
+            }
+        }
+
+        .btn__wrapper {
+            text-align: center;
+
+            .btn {
+                padding: 5px;
+                background-color: red;
+                color: #fff;
+                margin-top: 100px;
+                align-items: center;
+            }
+        }
+    }
+
+    h2 {
+        color: red;
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        margin-top: 50px;
+    }
+}

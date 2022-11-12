@@ -1,0 +1,16 @@
+.hero {
+    height: 100vh;
+    z-index: 5;
+
+    &__container {
+        padding: 10px;
+        height: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        background-image: url(../../../public/src/img/marvel_hero_bg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

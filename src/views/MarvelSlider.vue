@@ -17,8 +17,9 @@
       v-for="text in swiperTextBase"
       :key="text.description"
     >
-      <div>
-        <h1>{{ text.authore }}</h1>
+      <div class="swiper-items">
+        <h1>{{ text.author }}</h1>
+        <h2>{{ msg }}</h2>
         <p>{{ text.description }}</p>
         <img :src="text.img" alt="image" />
       </div>
@@ -34,6 +35,9 @@ import "swiper/css/pagination";
 import { ref } from "vue";
 export default {
   name: "SwiperComponent",
+  props: {
+    mgs: String,
+  },
   components: { Swiper, SwiperSlide },
   setup() {
     const swiperTextBase = ref([
@@ -64,17 +68,5 @@ export default {
 </script>
 
 <style>
-.swiper {
-  margin-top: 170px;
-  height: 400px;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.slider {
-  background-color: blue;
-  border-radius: 20px;
-  height: 400px;
-  min-width: 200px;
-}
+@import "../../public/src/css/MarvelSlider.min.css";
 </style>

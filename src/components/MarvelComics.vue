@@ -1,14 +1,37 @@
 <template>
-  <div class="comics" id="comics">
+  <div class="comics">
     <h2 class="comics__title">comics</h2>
+    <div class="comics__wrapper"></div>
     <div class="container">
-      <button v-on:click="results">click</button>
+      <div class="comics__navigation">
+        <ul>
+          <li>
+            <router-link to="/">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/comics">Comics</router-link>
+          </li>
+          <li>
+            <router-link to="/characters">Characters</router-link>
+          </li>
+          <li>
+            <router-link to="/movie">Movie</router-link>
+          </li>
+        </ul>
+      </div>
+      <MarvelSlider />
+      <div class="btn__wrap">
+        <!-- <button class="btn" v-on:click="results">click</button> -->
+        <router-link to="/comicsAll"
+          ><button class="btn">More Comics</button>
+        </router-link>
+      </div>
       <div class="results">
         <div class="item" v-for="item in result" :key="item.result">
           <h1>{{ item.title }}</h1>
           <h3>{{ item.id }}</h3>
+          <img v-bind:src="item.thumbnail.path + '.jpg'" v-bind:alt="poster" />
         </div>
-        <MarvelSlider />
       </div>
     </div>
   </div>
@@ -16,26 +39,37 @@
   
   <script>
 import axios from "axios";
-import MarvelSlider from "@/components/MarvelSlider.vue";
+import MarvelSlider from "@/views/MarvelSlider.vue";
 
 export default {
+  name: "MarvelComics",
   components: {
     MarvelSlider,
+  },
+  props: {
+    title: String,
+    id: Number,
   },
   data() {
     return {
       result: [],
       error: [],
+      apiUrl: "https://gateway.marvel.com/v1/public/comics?",
+      params: {
+        ts: "1",
+        apikey: "3b2936364f8bbf97fc5f94fd4140fd14",
+        hash: "5a96ed10a2f41594b6666404d14ca940",
+      },
     };
   },
   methods: {
     results() {
       axios
-        .get(
-          "http://gateway.marvel.com/v1/public/comics?ts=1&apikey=eed65e480c39f84b69b4fea7a90a601f&hash=b1c96125b5011981d21c7d12c91f322a"
-        )
+        .get(this.apiUrl, { params: this.params })
         .then((response) => {
-          this.result = response.data.data.results;
+          (this.result = response.data.data.results),
+            (this.totalResults = response.data.data.total),
+            (this.limit = response.data.data.limit);
         })
         .catch((e) => {
           this.error.push(e);
@@ -46,28 +80,5 @@ export default {
 </script >
   
   <style scoped  lang="scss">
-.comics {
-  margin-top: 100px;
-  height: 100vh;
-  max-width: 1170px;
-
-  .container {
-    z-index: 5;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-image: url(../assets/img/marvel_homepage_bg.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  h2 {
-    font-family: "Staatliches", cursive;
-    letter-spacing: 7px;
-    color: red;
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-  }
-}
+@import "../../public/src/css/MarvelComics.min.css";
 </style>
